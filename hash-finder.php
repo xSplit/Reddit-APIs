@@ -1,7 +1,7 @@
 <?php
 $search = 'https://www.google.com/search?q=';
 
-if(isset($argv[1],$argv[2]) && in_array($argv[2],hash_algos()))
+if(count($argv)>2 && in_array($argv[2],hash_algos()))
 {
     echo 'Working...'.PHP_EOL;
     $r = file_get_contents($search.$argv[1]);
