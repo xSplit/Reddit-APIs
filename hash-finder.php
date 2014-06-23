@@ -16,4 +16,4 @@ if(isset($argv[1],$argv[2]) && in_array($argv[2],hash_algos()))
        $r = file_get_contents($search.$argv[1].'&start='.($i*10));
     }
     die('Not found');
-}else echo "Invalid hash or hash type";
+}else echo 'Invalid hash or hash type';
