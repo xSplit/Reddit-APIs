@@ -10,6 +10,7 @@ How to use
 Examples
 <br/>
 <code>C:\...\php.exe C:\...\hash-finder.php 5d41402abc4b2a76b9719d911017c592 md5</code>
+<br/>
 <code>C:\...\php.exe C:\...\hash-finder.php hashes.txt md5</code>
 </h4>
 
