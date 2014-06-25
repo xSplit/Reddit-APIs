@@ -16,10 +16,9 @@ if(count($argv)>2 && in_array($argv[2],hash_algos()))
        array_shift($urls);
        foreach($urls as $url)
        {
-           $d = new DOMDocument();
-           @$d->loadHTML(@file_get_contents($url));
-           $arr = nlist($d->childNodes);
-          foreach(preg_split('/\s+|:/',implode(' ',$arr)) as $word)
+          $d = new DOMDocument();
+          @$d->loadHTML(@file_get_contents($url));
+          foreach(preg_split('/\s+|:/',implode(' ',nlist($d->childNodes))) as $word)
           {
               if(hash($argv[2],trim($word))==$hash)
               {
@@ -28,7 +27,7 @@ if(count($argv)>2 && in_array($argv[2],hash_algos()))
                   break;
               }
           }
-           if($found) break;
+          if($found) break;
        }
        $r = file_get_contents($search.$hash.'&start='.($i*10));
        $i++;
