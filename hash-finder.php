@@ -4,7 +4,8 @@ $search = 'https://www.google.com/search?q=';
 if(count($argv)>2 && in_array($argv[2],hash_algos()))
 {
   echo 'Working...'.PHP_EOL;
-  foreach((is_file($argv[1])?array_map('rtrim',file($argv[1])):array(trim($argv[1]))) as $hash){
+  foreach((is_file($argv[1])?array_map('rtrim',file($argv[1])):array(trim($argv[1]))) as $hash)
+  {
     $r = file_get_contents($search.$hash);
     $ps = substr_count($r,'class="fl"');
     $found = false;
